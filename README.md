@@ -1,8 +1,4 @@
-Now, We do the comparison on lab-scale Hybrid Rocket Fuels firing data for Paraffin and Beeswax-Based blends.  
-Tree-based regressors (XGBoost, Random Forest, LightGBM) predict performance targets from DAQ and derived ballistic inputs.
-MC Dropout, commomnly called as Monte-Carlo Dropout over a small neural net, is used only to estimate uncertainty on regression rate.
-
-This project uses Leave-One-Firing-Out validation: each static-fire test (fuel_type / sheet) is held out once, the model is trained on the remaining firings, and performance is measured on the held-out firing.
+We do the comparison on lab-scale Hybrid Rocket Fuels firing data for different ML models. This project uses Leave-One-Out validation: each static-fire test (fuel type / sheet) is held out once, the model is trained on the remaining firings, and performance is measured on the held-out firing.
 Models compared under the same LOO scheme: XGBoost, Random Forest, and LightGBM, with MC Dropout used for regression-rate uncertainty.
 
 1) **Institution**: Global Academy of Technology (GAT), Department of Aeronautical Engineering  
