@@ -1,0 +1,38 @@
+MODEL COMPARISON — Leave-One-Firing-Out (LOO)
+Inputs  : ['X_Value', 'Force', 'Pressure_0', 'Gox']
+Outputs : ['Pressure', 'rdot_mm_s', 'Isp', 'Thrust', 'cstar']
+
+LOO R2
+model      LightGBM  RandomForest  XGBoost
+target                                    
+Isp         -0.7778       -0.8134  -0.8463
+Pressure    -0.7778       -0.6884  -0.7778
+Thrust      -0.7778       -0.8052  -0.8898
+cstar       -0.7778       -0.8036  -0.8454
+rdot_mm_s   -0.7778       -0.7974  -0.8521
+
+LOO MAE
+model      LightGBM  RandomForest   XGBoost
+target                                     
+Isp         48.8401       49.6472   50.6975
+Pressure     0.0084        0.0081    0.0084
+Thrust       3.5310        3.5271    3.5965
+cstar      396.3546      402.5291  411.1848
+rdot_mm_s    1.9199        1.9482    1.9979
+
+LOO RMSE
+model      LightGBM  RandomForest   XGBoost
+target                                     
+Isp         56.4677       57.0311   57.5459
+Pressure     0.0085        0.0083    0.0085
+Thrust       3.9429        3.9733    4.0653
+cstar      457.7897      461.0998  466.4094
+rdot_mm_s    2.2202        2.2324    2.2661
+
+BEST PER TARGET
+   target   best_model   best_r2   best_mae  best_rmse
+ Pressure RandomForest -0.688425   0.008122   0.008328
+rdot_mm_s     LightGBM -0.777778   1.919904   2.220150
+      Isp     LightGBM -0.777778  48.840078  56.467674
+   Thrust     LightGBM -0.777778   3.531031   3.942913
+    cstar     LightGBM -0.777778 396.354628 457.789684

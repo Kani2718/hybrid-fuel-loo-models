@@ -1,0 +1,40 @@
+HYBRID ROCKET FUEL BLEND — LOO SUMMARY (Random Forest)
+============================================================
+Main model     : Random Forest
+Validation     : Leave-One-Firing-Out (by fuel_type)
+Excel file     : daq_raw_4blends.xlsx
+Sheets used    : ['Firing 01', 'Firing 02', 'Firing 03', 'Firing 04']
+Input features : ['X_Value', 'Force', 'Pressure_0', 'Gox']
+Targets        : ['Pressure', 'rdot_mm_s', 'Isp', 'Thrust', 'cstar']
+Labeled rows   : 4
+
+LOO PER-TARGET METRICS
+------------------------------------------------------------
+   Target      R2      MAE     RMSE
+ Pressure -0.6884   0.0081   0.0083
+rdot_mm_s -0.7974   1.9482   2.2324
+      Isp -0.8134  49.6472  57.0311
+   Thrust -0.8052   3.5271   3.9733
+    cstar -0.8036 402.5291 461.0998
+
+MC Dropout mean sigma (LOO folds) = 1.0539
+
+FUEL RANKING (LOO)
+------------------------------------------------------------
+Rank      Fuel Pred_P Pred_rdot Pred_Isp Pred_Thrust Pred_cstar Unc_rdot  Score
+   1 Firing 02 0.0642    2.0919  35.7366      1.7787   311.1001   0.4278 0.8000
+   2 Firing 03 0.0676    2.0327  31.7288     -0.1599   297.0619   0.5165 0.7476
+   3 Firing 04 0.0689    2.0144  30.3963      0.5854   285.0181   2.8254 0.3551
+   4 Firing 01 0.0649    0.7335  -1.0838     -0.9913    25.6821   0.4460 0.0255
+
+BEST FUEL
+------------------------------------------------------------
+Best Fuel               : Firing 02
+Regression Rate         : 2.0919 ± 0.4278 mm/s
+Pressure (pred)         : 0.0642
+Specific Impulse        : 35.74
+Thrust                  : 1.78
+Characteristic Velocity : 311.10
+Final Score             : 0.8000
+
+Excel : Best_Fuel_Results_random_forest_LOO.xlsx
