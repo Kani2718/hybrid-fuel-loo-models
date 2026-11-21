@@ -1,3 +1,5 @@
+# Hybrid Fuel Comparison using Leave-One-Out (LOO) Scheme
+
 We do the comparison on lab-scale Hybrid Rocket Fuels firing data for different ML models. This project uses Leave-One-Out validation: each static-fire test (fuel type / sheet) is held out once, the model is trained on the remaining firings, and performance is measured on the held-out firing.
 Models compared under the same LOO scheme: XGBoost, Random Forest, and LightGBM, with MC Dropout used for regression-rate uncertainty.
 
